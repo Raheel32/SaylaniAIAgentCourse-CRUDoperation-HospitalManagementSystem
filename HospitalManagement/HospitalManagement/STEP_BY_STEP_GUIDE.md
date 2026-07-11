@@ -8,7 +8,7 @@ explains what everything does.
 
 ---
 
-## Before You Start: Install PostgreSQL
+---- Before You Start: Install PostgreSQL
 
 Unlike the earlier Patient project (which used SQLite, a file-based
 database needing no setup), this project uses PostgreSQL, a real
@@ -25,7 +25,7 @@ database server that runs in the background on your computer.
 
 ---
 
-## Phase 1 — Project Setup
+---- Phase 1 — Project Setup
 
 Extract the zip I've given you. It already matches this exact structure:
 
@@ -50,7 +50,7 @@ cd path/to/HospitalManagement
 
 ---
 
-## Phase 2 — Install Dependencies
+---- Phase 2 — Install Dependencies
 
 Create and activate a virtual environment (same as before):
 ```bash
@@ -72,7 +72,7 @@ and `python-dotenv` (reads `.env` files).
 
 ---
 
-## Phase 3 — Create the PostgreSQL Database
+---- Phase 3 — Create the PostgreSQL Database
 
 Open a terminal (or use pgAdmin's Query Tool) and run:
 
@@ -97,7 +97,7 @@ name it `hospital_db` → Save.
 
 ---
 
-## Phase 4 — Configure SQLAlchemy (.env + config.py + database.py)
+---- Phase 4 — Configure SQLAlchemy (.env + config.py + database.py)
 
 1. In the project root, copy `.env.example` to a new file named exactly
    `.env`:
@@ -128,7 +128,7 @@ If this errors out, your `.env` is missing, misnamed, or missing a field
 
 ---
 
-## Phase 5 — The Models (Already Built)
+---- Phase 5 — The Models
 
 Open `app/models/doctor.py`, `patient.py`, and `staff.py`. Key things to
 notice:
@@ -143,7 +143,7 @@ notice:
 
 ---
 
-## Phase 6 — The Schemas (Already Built)
+---- Phase 6 — The Schemas
 
 Open `app/schemas/doctor.py` as an example. Every entity has 3 classes:
 - `...Create` — required fields when adding a new record
@@ -157,7 +157,7 @@ database.
 
 ---
 
-## Phase 7 — The CRUD Layer (Already Built)
+---- Phase 7 — The CRUD Layer
 
 Open `app/crud/doctor.py`. Each file has the same 5 functions:
 `create_x()`, `get_x()`, `get_all_x()`, `update_x()`, `delete_x()`.
@@ -169,7 +169,7 @@ script, a scheduled job, or a test, not just through the API.
 
 ---
 
-## Phase 8 — The API Routes (Already Built)
+---- Phase 8 — The API Routes
 
 Open `app/routes/doctor.py`. Each entity has its own `APIRouter` with
 the 5 standard endpoints (`POST`, `GET` all, `GET` one, `PUT`, `DELETE`).
@@ -184,7 +184,7 @@ error bubble up.
 
 ---
 
-## Phase 9 — Alembic Migrations (Already Set Up — Just Run It)
+---- Phase 9 — Alembic Migrations
 
 I already ran `alembic init alembic`, wired `alembic/env.py` to read your
 `.env` (via `config.py`) and to know about all 3 models, and generated
@@ -208,7 +208,7 @@ new here, just now pointed at PostgreSQL.)
 
 ---
 
-## Phase 10 — Run and Test
+---- Phase 10 — Run and Test
 
 ```bash
 uvicorn app.main:app --reload
@@ -234,7 +234,7 @@ database before handing this to you, so the code is confirmed working
 
 ---
 
-## What's *Not* Built Yet
+---- What's *Not* Built Yet
 
 The "Features We'll Add" list at the bottom of your plan (JWT auth,
 password hashing, role-based authorization, search/filtering/pagination,
@@ -249,7 +249,7 @@ you've just learned).
 
 ---
 
-## Troubleshooting
+---- Troubleshooting
 
 | Problem | Likely Fix |
 |---|---|
