@@ -89,7 +89,7 @@ if you dont know the path try this one
 It'll ask for the password you set during install. Once connected:
 ```sql
 CREATE DATABASE hospital_db;
-\q
+\q (to quit the db)
 ```
 
 Using pgAdmin instead: right-click "Databases" → Create → Database →
